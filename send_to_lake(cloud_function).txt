@@ -1,0 +1,13 @@
+from google.cloud import storage
+import json
+
+def send_to_lake(request):
+    try:
+        data = request.get_json()
+        client = storage.Client()
+        bucket = client.bucket('raw-transactions')
+        blob = bucket.blob(f"transactions/{data['timestamp']}.json")
+        blob.upload_from_string(json.dumps(data))
+        return 'Transaction sent to data lake', 200
+    except Exception as e:
+        return f'Error: {str(e)}', 500

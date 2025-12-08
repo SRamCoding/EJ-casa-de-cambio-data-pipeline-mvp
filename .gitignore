@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+*.log
+
+# Entorno virtual
+venv/
+ENV/
+env/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Configuraciones locales
+*.env
+.env
+
+# Archivos de base de datos locales
+*.sqlite3
+
+# PyCharm
+*.iml
+out/
+
+# FastAPI / Uvicorn logs
+*.log

@@ -1,0 +1,41 @@
+*SOLO ES REFERENCIAL*
+
+{
+  $jsonSchema: {
+    title: "transactions",
+    bsonType: "object",
+    required: ["user_id", "source_currency", "target_currency", "amount", "rate", "operation_type", "timestamp"],
+    properties: {
+      user_id: {
+        bsonType: "string",
+        description: "Debe ser un string y es obligatorio"
+      },
+      source_currency: {
+        enum: ["USD", "PEN", "EUR", "GBP"],
+        description: "Moneda origen permitida"
+      },
+      target_currency: {
+        enum: ["USD", "PEN", "EUR", "GBP"],
+        description: "Moneda destino permitida"
+      },
+      amount: {
+        bsonType: "double",
+        minimum: 0.01,
+        description: "Monto positivo obligatorio"
+      },
+      rate: {
+        bsonType: "double",
+        minimum: 0.01,
+        description: "Tasa positiva obligatoria"
+      },
+      operation_type: {
+        enum: ["buy", "sell"],
+        description: "Tipo de operación permitido"
+      },
+      timestamp: {
+        bsonType: "date",
+        description: "Fecha de la transacción"
+      }
+    }
+  }
+}

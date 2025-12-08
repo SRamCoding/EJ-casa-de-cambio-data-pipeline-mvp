@@ -1,0 +1,13 @@
+(SOLO REFERENCIAL)
+
+exports = function(changeEvent) {
+if (changeEvent.operationType !== "insert") return;
+
+
+const transaction = changeEvent.fullDocument;
+const url = "https://sendtolake-340332926212.us-east1.run.app";
+const http = context.services.get("http");
+
+
+http.post({ url, body: JSON.stringify(transaction) });
+};
