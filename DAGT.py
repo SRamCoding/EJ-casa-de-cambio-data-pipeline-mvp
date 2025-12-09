@@ -8,7 +8,7 @@ def extract():
 
 def transform():
     print("Transformando data con PySpark…")
-    # Aquí se ejecutará tu script PySpark (lo agregamos luego)
+    # Aquí se ejecutará el script PySpark (lo agregamos luego)
 
 def validate():
     from validation.schema import validate_data  # Pandera schema
